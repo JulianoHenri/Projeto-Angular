@@ -36,7 +36,11 @@
             {{entry.category.name}}
             </td>
             <td>
-                {{entry.amount}}
+                <strong [class.text-success]="entry.type == 'revenue'" [class.text-danger]="entry.type == 'expense'">
+                    {{entry.amount}}
+                </strong>
+                <br>
+                <span class="badge badge-light">{{entry.paidText}}</span>
             </td>   
             <td class="text-right" >
                 <a [routerLink]="[entry.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
